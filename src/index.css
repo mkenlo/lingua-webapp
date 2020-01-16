@@ -12,16 +12,26 @@ code {
 }
 
 h1 {
-  margin: 30px 0 0 10px;
+  padding-top: 30px;
 }
 h2 {
-  margin: 20px 0 0 5px;
+  padding-top: 20px;
 }
-
+a {
+  color: #25889c;
+}
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .navbar-light .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
 }
 
 .navbar-light .navbar-brand {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.sm-margin {
+  margin-top: 33px;
 }
