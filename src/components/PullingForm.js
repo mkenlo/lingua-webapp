@@ -2,7 +2,25 @@ import React from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import LanguageDropDownMenu from "./LanguageDropdown";
 
+function sortLanguages(data) {
+  let sources = [];
+  let targets = [];
+
+  data.map(function(lang) {
+    if (lang.type.match("local")) {
+      targets.push(lang);
+    }
+    if (lang.type.match("foreign")) {
+      sources.push(lang);
+    }
+  });
+
+  return [sources, targets];
+}
+
 function PullingForm(props) {
+  let [sources, targets] = sortLanguages(props.languages);
+
   return (
     <section id="pulling-form">
       <h1>Download a dataset</h1>
@@ -15,14 +33,14 @@ function PullingForm(props) {
             <LanguageDropDownMenu
               label="Source"
               name="source_lang"
-              languages={["english", "french"]}
+              languages={sources}
             />
           </Col>
           <Col sm>
             <LanguageDropDownMenu
               label="Target"
               name="target_lang"
-              languages={["yemba", "nguiemboon"]}
+              languages={targets}
             />
           </Col>
           <Col sm>

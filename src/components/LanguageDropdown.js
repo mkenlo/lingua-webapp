@@ -2,9 +2,9 @@ import React from "react";
 import { Form, FormGroup } from "react-bootstrap";
 
 function LanguageDropDownMenu(props) {
-  const options = props.languages.map((lang, index) => (
-    <option key={index} value={lang}>
-      {lang}
+  const options = props.languages.map(lang => (
+    <option key={lang.id} value={lang.name}>
+      {lang.name}
     </option>
   ));
   return (
